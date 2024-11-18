@@ -16,7 +16,7 @@ LoadBalancer_Project/
 │   │   ├── lb_registration.h  # Header fajl za registraciju WR-ova
 │   │   ├── lb_sync.c          # Sinhronizacija podataka među WR-ovima
 │   │   ├── lb_sync.h          # Header fajl za sinhronizaciju podataka
-│   │
+│   |
 │   ├── worker/                # Code za Worker komponente
 │   │   ├── wr_main.c          # Ulazna tačka za Worker
 │   │   ├── wr_utils.c         # Pomoćne funkcije za Worker
