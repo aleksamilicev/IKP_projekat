@@ -1,6 +1,11 @@
 # IKP_projekat
 Load Balancing
 
+# Pokretanje projekta TUTORIAL:
+1. Pokrenuti LB        "./lb_main"
+2. Pokrenuti WR        "./wr_main"
+3. Pokrenuti Testove   "./integration_tests"
+
 
 # Folder - File struktura:
 Preglednije u Visual Studio Code Editoru

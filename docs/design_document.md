@@ -1,3 +1,36 @@
+# Tok Programa
+1. Inicijalizacija LB i WR komponenti(npr WR1, WR2, ... WRN), N je proizvoljan(random) broj
+
+2. Klijent šalje zahtev, šalje podatke za skladištenje LB-u, pr:
+ZAHTEV: {ID_podatka: 1, sadržaj: "....1"},
+LB prima zahtev na svom portu 5059.
+
+3. Distribucija podataka(Round Robin algoritam)
+- LB koristi RR, 1. zahtev se šalje WR1, 2. zahtev se šalje WR2, 3. zahtev se šalje WR1
+
+4. Skladištenje podataka u WR
+- WR1 prima podatke od LB-a i skladišti ih u svoj lokalni prostor
+
+5. Sinhronizacija sa drugim WR-ovima
+- WR1 šalje notifikaciju svim drugim WR-ovima o novom podatku
+- WR2 prima notifikaciju od WR1 i ažurira svoje skladište (appenduje podatke od WR1)
+
+6. Obaveštenje LB-a
+- Kada WR1 uspešno skladišti podatak i pošalje notifikaciju, šalje potvrdu LB-u
+- LB beleži(loguje) da je podatak ispravno obrađen
+
+7. Inicijalno dodavanje WR-a
+- Novi WR se registruje kod LB-a i šalje svoj IP adr i Port
+- LB dodaje WR u svoj dinamički niz(listu) i inicira REDISTRIBUCIJU podataka
+
+7.5 Klijent šalje novi zahtev
+
+8. Rezultat
+- Na kraju, svi WR-ovi imaju identično skladište podataka
+
+
+
+
 # Strukture
 1. WR (ID, IP adresa, Port, Status)
 2. Hash Mapa WR-ova (kljuc je ID, a vrednost je IP adresa, Port, Status)
